@@ -21,8 +21,8 @@ class QRGenerateActivity : AppCompatActivity() {
             finish()
         }
 
-        val billId = "010755500039200"
-        val content = "|$billId\n$message1\n$message2\n0"
+        val billId = "0107555000392"
+        val content = "|" + billId +"00\n$message1\n$message2\n0"
         generateQR(content)
     }
 

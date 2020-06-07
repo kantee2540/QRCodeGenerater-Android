@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
+
         <variable
             name="viewmodel"
             type="com.example.qrcodegenerater.FormViewModel" />
@@ -41,7 +43,8 @@
             android:text="@{viewmodel.message1}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:importantForAutofill="no" />
 
         <EditText
             android:id="@+id/ref2_edittext"
@@ -55,7 +58,8 @@
             android:text="@{viewmodel.message2}"
             app:layout_constraintEnd_toEndOf="@+id/ref1_edittext"
             app:layout_constraintStart_toStartOf="@+id/ref1_edittext"
-            app:layout_constraintTop_toBottomOf="@+id/ref1_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/ref1_edittext"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/submit_button"
@@ -67,6 +71,34 @@
             app:layout_constraintEnd_toEndOf="@+id/ref2_edittext"
             app:layout_constraintStart_toStartOf="@+id/ref2_edittext"
             app:layout_constraintTop_toBottomOf="@+id/ref2_edittext" />
+
+        <ImageButton
+            android:id="@+id/clear_button_1"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00FFFFFF"
+            android:visibility="@{viewmodel.isShowClear1 ? View.VISIBLE : View.GONE}"
+            android:onClick="@{() -> viewmodel.onClickClear1()}"
+            app:layout_constraintBottom_toBottomOf="@+id/ref1_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/ref1_edittext"
+            app:layout_constraintTop_toTopOf="@+id/ref1_edittext"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_cancel_16" />
+
+        <ImageButton
+            android:id="@+id/clear_button_2"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00FFFFFF"
+            android:visibility="@{viewmodel.isShowClear2 ? View.VISIBLE : View.GONE}"
+            android:onClick="@{() -> viewmodel.onClickClear2()}"
+            app:layout_constraintBottom_toBottomOf="@+id/ref2_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/ref2_edittext"
+            app:layout_constraintTop_toTopOf="@+id/ref2_edittext"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_cancel_16" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
