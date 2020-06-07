@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.qrcodegenerater.FormViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FormActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ref1_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/ref1"
+            android:inputType="number|textPersonName"
+            android:onTextChanged="@{viewmodel.onMessage1TextChanged}"
+            android:text="@{viewmodel.message1}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/ref2_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="@string/ref2"
+            android:inputType="number|textPersonName"
+            android:onTextChanged="@{viewmodel.onMessage2TextChanged}"
+            android:text="@{viewmodel.message2}"
+            app:layout_constraintEnd_toEndOf="@+id/ref1_edittext"
+            app:layout_constraintStart_toStartOf="@+id/ref1_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/ref1_edittext" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/submit"
+            android:enabled="@{viewmodel.isEnabled}"
+            app:layout_constraintEnd_toEndOf="@+id/ref2_edittext"
+            app:layout_constraintStart_toStartOf="@+id/ref2_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/ref2_edittext" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

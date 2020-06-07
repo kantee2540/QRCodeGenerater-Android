@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">QRCodeGenerater</string>
+    <string name="ref1">ฺReference 1</string>
+    <string name="ref2">Reference 2</string>
+    <string name="submit">Submit</string>
+</resources>
