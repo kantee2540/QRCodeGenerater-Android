@@ -2,5 +2,8 @@
 <resources>
     <color name="colorPrimary">#f4f4f4</color>
     <color name="colorPrimaryDark">#c1c1c1</color>
-    <color name="colorAccent">#039be5</color>
+    <color name="colorAccent">#6daa5a</color>
+    <color name="seg_color">#6daa5a</color>
+    <color name="seg_color_press">#548545</color>
+    <color name="disabled_color">#969696</color>
 </resources>

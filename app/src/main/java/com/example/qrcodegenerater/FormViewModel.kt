@@ -7,9 +7,11 @@ class FormViewModel: ViewModel() {
 
     val message1 = ObservableField("")
     val message2 = ObservableField("")
+    val amount = ObservableField("")
     val isEnabled = ObservableField(false)
     val isShowClear1 = ObservableField(false)
     val isShowClear2 = ObservableField(false)
+    val isShowClearAmount = ObservableField(false)
 
     fun onMessage1TextChanged(s: CharSequence,start: Int,before : Int, count :Int){
         message1.set(s.toString())
@@ -31,12 +33,25 @@ class FormViewModel: ViewModel() {
         checkEnabled()
     }
 
+    fun onAmountTextChanged(s: CharSequence,start: Int,before : Int, count :Int){
+        amount.set(s.toString())
+        if (amount.get()!!.isNotEmpty()){
+            isShowClearAmount.set(true)
+        }else{
+            isShowClearAmount.set(false)
+        }
+    }
+
     fun onClickClear1(){
         message1.set("")
     }
 
     fun onClickClear2(){
         message2.set("")
+    }
+
+    fun onClickClearAmount(){
+        amount.set("")
     }
 
     private fun checkEnabled(){

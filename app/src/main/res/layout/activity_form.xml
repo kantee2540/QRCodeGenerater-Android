@@ -21,9 +21,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:text="@string/app_name"
-            android:textColor="@android:color/black"
+            android:fontFamily="@font/sukhumvit_set"
+            android:text="@string/seg"
+            android:textColor="@color/seg_color"
             android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,44 +36,62 @@
             android:id="@+id/ref1_edittext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="16dp"
             android:ems="10"
-            android:hint="@string/ref1"
+            android:fontFamily="@font/sukhumvit_set"
+            android:hint="@string/please_input"
+            android:importantForAutofill="no"
             android:inputType="number|textPersonName"
             android:onTextChanged="@{viewmodel.onMessage1TextChanged}"
             android:text="@{viewmodel.message1}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:importantForAutofill="no" />
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <EditText
             android:id="@+id/ref2_edittext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:ems="10"
-            android:hint="@string/ref2"
+            android:fontFamily="@font/sukhumvit_set"
+            android:hint="@string/please_input"
+            android:importantForAutofill="no"
             android:inputType="number|textPersonName"
             android:onTextChanged="@{viewmodel.onMessage2TextChanged}"
             android:text="@{viewmodel.message2}"
-            app:layout_constraintEnd_toEndOf="@+id/ref1_edittext"
-            app:layout_constraintStart_toStartOf="@+id/ref1_edittext"
-            app:layout_constraintTop_toBottomOf="@+id/ref1_edittext"
-            android:importantForAutofill="no" />
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <EditText
+            android:id="@+id/amount_edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/sukhumvit_set"
+            android:hint="@string/please_input_amount"
+            android:importantForAutofill="no"
+            android:inputType="number|textPersonName"
+            android:onTextChanged="@{viewmodel.onAmountTextChanged}"
+            android:text="@{viewmodel.amount}"
+            app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
             android:id="@+id/submit_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/submit"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/submit_button"
             android:enabled="@{viewmodel.isEnabled}"
+            android:fontFamily="@font/sukhumvit_set"
+            android:text="@string/create_qr"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/ref2_edittext"
+            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="@+id/ref2_edittext"
-            app:layout_constraintTop_toBottomOf="@+id/ref2_edittext" />
+            app:layout_constraintTop_toBottomOf="@+id/amount_edittext" />
 
         <ImageButton
             android:id="@+id/clear_button_1"
@@ -99,6 +120,59 @@
             app:layout_constraintTop_toTopOf="@+id/ref2_edittext"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_baseline_cancel_16" />
+
+
+        <ImageButton
+            android:id="@+id/clear_amount"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00FFFFFF"
+            android:onClick="@{() -> viewmodel.onClickClearAmount()}"
+            android:visibility="@{viewmodel.isShowClearAmount ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/amount_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/amount_edittext"
+            app:layout_constraintTop_toTopOf="@+id/amount_edittext"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_cancel_16" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="23dp"
+            android:fontFamily="@font/sukhumvit_set"
+            android:text="@string/ref1"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/sukhumvit_set"
+        android:text="@string/ref2"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/ref1_edittext" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/sukhumvit_set"
+            android:text="@string/amount"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/ref2_edittext" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
