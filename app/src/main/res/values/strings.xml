@@ -3,6 +3,8 @@
     <string name="seg">อาคเนย์ประกันภัย</string>
     <string name="ref1">ฺReference 1</string>
     <string name="ref2">Reference 2</string>
+    <string name="ref1_sim">Ref 1:</string>
+    <string name="ref2_sim">Ref 2:</string>
     <string name="amount">จำนวนเงิน</string>
     <string name="create_qr">สร้าง Barcode / QR</string>
     <string name="please_input">กรุณาใส่เลขที่อ้างอิง</string>

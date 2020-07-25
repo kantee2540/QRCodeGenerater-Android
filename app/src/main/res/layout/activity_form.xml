@@ -88,6 +88,7 @@
             android:text="@string/create_qr"
             android:textColor="@android:color/white"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/ref2_edittext"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="@+id/ref2_edittext"
