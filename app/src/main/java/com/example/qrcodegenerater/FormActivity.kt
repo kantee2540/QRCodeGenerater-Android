@@ -24,11 +24,13 @@ class FormActivity : AppCompatActivity() {
 
             val mes1 = ref1_edittext.text.toString()
             val mes2 = ref2_edittext.text.toString()
+            val amount = amount_edittext.text.toString()
 
             val intent = Intent(applicationContext, QRGenerateActivity::class.java)
 
             intent.putExtra("ref1", mes1)
             intent.putExtra("ref2", mes2)
+            intent.putExtra("amount", amount)
 
             startActivity(intent)
         }

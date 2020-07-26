@@ -16,16 +16,27 @@ class QRGenerateActivity : AppCompatActivity() {
         val intent = intent
         val message1 = intent.getStringExtra("ref1")
         val message2 = intent.getStringExtra("ref2")
+        val amount = intent.getStringExtra("amount")
+        val formatAmount = formatDecimal(amount)
 
         ref1_text.text = message1
         ref2_text.text = message2
+        amount_text.text = amount
+
+        if (!amount!!.contains(".") && amount != ""){
+            amount_text.text = "$amount.00"
+        }else if(amount == ""){
+            amount_text.text = "0.00"
+        }else{
+            amount_text.text = amount
+        }
 
         toolbar.setNavigationOnClickListener {
             finish()
         }
 
         val billId = "0107555000392"
-        val content = "|" + billId +"00\n$message1\n$message2\n0"
+        val content = "|" + billId +"00\n$message1\n$message2\n$formatAmount"
         generateQR(content)
         generateBarcode(content)
     }
@@ -50,5 +61,23 @@ class QRGenerateActivity : AppCompatActivity() {
         }catch (e: Exception){
             e.printStackTrace()
         }
+    }
+
+    private fun formatDecimal(amount: String): String{
+        var totalAmount = ""
+        if (amount.contains(".")) {
+            val dot = amount.indexOf('.')
+            val newAmount = amount.substring(0, dot)
+            val newDecimal = amount.substring(dot + 1)
+            if (newDecimal.count() >= 2){
+                totalAmount = "$newAmount$newDecimal"
+            }else{
+                totalAmount = "$newAmount$newDecimal" + "0"
+            }
+        }else{
+            totalAmount = amount + "00"
+        }
+
+        return totalAmount
     }
 }
