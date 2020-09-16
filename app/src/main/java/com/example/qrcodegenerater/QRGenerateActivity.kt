@@ -2,6 +2,7 @@ package com.example.qrcodegenerater
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.preference.PreferenceManager
 import com.google.zxing.BarcodeFormat
 import com.journeyapps.barcodescanner.BarcodeEncoder
 import kotlinx.android.synthetic.main.activity_q_r_generate.*
@@ -35,7 +36,13 @@ class QRGenerateActivity : AppCompatActivity() {
             finish()
         }
 
-        val billId = "0107555000392"
+        val sharePref = PreferenceManager.getDefaultSharedPreferences(this)
+        val taxId = sharePref.getString("tax_num", "0107555000392")
+        val editor = sharePref.edit()
+        editor.putString("tax_num", taxId)
+        editor.apply()
+
+        val billId = taxId
         val content = "|" + billId +"00\n$message1\n$message2\n$formatAmount"
         generateQR(content)
         generateBarcode(content)

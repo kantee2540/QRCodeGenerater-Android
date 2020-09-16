@@ -10,4 +10,24 @@
     <string name="please_input">กรุณาใส่เลขที่อ้างอิง</string>
     <string name="please_input_amount">กรุณากรอกจำนวนเงิน</string>
     <string name="submit">Submit</string>
+    <string name="setting">ตั้งค่า</string>
+    <string name="setting_tax">เปลี่ยนเลขผู้เสียภาษี</string>
+    <string name="setting_company">เปลี่ยนชื่อบริษัท</string>
+    <string name="setting_header">ตั้งค่าแอพพลิเคชั่น</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

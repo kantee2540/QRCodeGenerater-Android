@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.preference.PreferenceManager
 import com.example.qrcodegenerater.databinding.ActivityFormBinding
 import kotlinx.android.synthetic.main.activity_form.*
 
@@ -20,6 +21,14 @@ class FormActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_form)
         binding.viewmodel = viewModel
 
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val company = sharedPreferences.getString("company", "อาคเนย์ประกันภัย")
+        val editor = sharedPreferences.edit()
+        editor.putString("company", company)
+        editor.apply()
+
+        app_title.text = company
+
         submit_button.setOnClickListener {
 
             val mes1 = ref1_edittext.text.toString()
@@ -35,5 +44,17 @@ class FormActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        setting_button.setOnClickListener {
+            val intent = Intent(applicationContext, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val company = sharedPreferences.getString("company", "อาคเนย์ประกันภัย")
+        app_title.text = company
     }
 }

@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/setting_header">
+
+        <EditTextPreference
+            app:key="tax_num"
+            app:defaultValue="0107555000392"
+            app:title="@string/setting_tax"
+            app:useSimpleSummaryProvider="false" />
+
+        <EditTextPreference
+            app:key="company"
+            app:title="@string/setting_company"
+            app:useSimpleSummaryProvider="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
