@@ -14,6 +14,9 @@
     <string name="setting_tax">เปลี่ยนเลขผู้เสียภาษี</string>
     <string name="setting_company">เปลี่ยนชื่อบริษัท</string>
     <string name="setting_header">ตั้งค่าแอพพลิเคชั่น</string>
+    <string name="setting_version">เกี่ยวกับแอพพลิเคชั่น</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="version">เวอร์ชั่น : %1$s</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->

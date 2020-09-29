@@ -1,4 +1,5 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="@string/setting_header">
 
@@ -12,6 +13,17 @@
             app:key="company"
             app:title="@string/setting_company"
             app:useSimpleSummaryProvider="false" />
+
+
+        <PreferenceScreen
+            app:key="version"
+            app:title="@string/setting_version"
+            app:allowDividerAbove="true">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.example.qrcodegenerater"
+                android:targetClass="com.example.qrcodegenerater.VersionActivity"/>
+        </PreferenceScreen>
 
     </PreferenceCategory>
 
