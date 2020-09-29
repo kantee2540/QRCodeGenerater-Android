@@ -4,7 +4,7 @@
 
         <EditTextPreference
             app:key="tax_num"
-            app:defaultValue="0107555000392"
+            app:defaultValue=""
             app:title="@string/setting_tax"
             app:useSimpleSummaryProvider="false" />
 

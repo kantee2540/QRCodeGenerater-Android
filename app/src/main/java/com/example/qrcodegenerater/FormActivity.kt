@@ -23,8 +23,12 @@ class FormActivity : AppCompatActivity() {
 
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val company = sharedPreferences.getString("company", "อาคเนย์ประกันภัย")
+        val taxId = sharedPreferences.getString("tax_num", "0107555000392")
+
         val editor = sharedPreferences.edit()
         editor.putString("company", company)
+        editor.putString("tax_num", taxId)
+
         editor.apply()
 
         app_title.text = company
